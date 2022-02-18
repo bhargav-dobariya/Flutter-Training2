@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
-
 class StringAssets {
-  static String ListviewButton = " ListView";
-  static String ListviewBuilderButton = " Listview Builder";
-  static String ListviewSeparatedbutton = "Separated Listview";
-  static String ListviewAppBar = " ListView";
-  static String ListviewHelloFlutter = " Hello Flutter";
-  static String ListviewBuilderAppbar = " ListView Builder";
-  static String ListviewSeparatedAppbar = " Separated ListView";
+  static String listviewButton = " ListView";
+  static String listviewBuilderButton = " Listview Builder";
+  static String listviewSeparatedbutton = "Separated Listview";
+  static String listviewAppBar = " ListView";
+  static String listviewHelloFlutter = " Hello Flutter";
+  static String listviewBuilderAppbar = " ListView Builder";
+  static String listviewSeparatedAppbar = " Separated ListView";
 }

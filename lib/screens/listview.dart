@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:listview_task/Resources/color_assets.dart';
-import 'package:listview_task/Resources/string_asset.dart';
+import 'package:alert_dialog/Resources/color_assets.dart';
+import 'package:alert_dialog/Resources/string_asset.dart';
 
 class Listview extends StatefulWidget {
   const Listview({Key? key}) : super(key: key);
@@ -21,23 +21,23 @@ class _ListviewState extends State<Listview> {
           ),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text(StringAssets.ListviewAppBar),
+        title: Text(StringAssets.listviewAppBar),
         centerTitle: true,
       ),
       body: ListView(children: [
         Card(
           child: ListTile(
-            leading: Icon(Icons.account_balance_rounded),
-            title: Text(StringAssets.ListviewHelloFlutter),
+            leading: const Icon(Icons.account_balance_rounded),
+            title: Text(StringAssets.listviewHelloFlutter),
           ),
         ),
-        Card(
+        const Card(
           child: ListTile(
             leading: Icon(Icons.account_balance_rounded),
             title: Text("Hello Flutter"),
           ),
         ),
-        Card(
+        const Card(
           child: ListTile(
             leading: Icon(Icons.account_balance_rounded),
             title: Text("Hello Flutter"),

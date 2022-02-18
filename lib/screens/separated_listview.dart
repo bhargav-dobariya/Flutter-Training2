@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:listview_task/Resources/color_assets.dart';
-import 'package:listview_task/Resources/string_asset.dart';
+import 'package:alert_dialog/Resources/color_assets.dart';
+import 'package:alert_dialog/Resources/string_asset.dart';
 
 class SaparatedListView extends StatelessWidget {
   SaparatedListView({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class SaparatedListView extends StatelessWidget {
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          title: Text(StringAssets.ListviewSeparatedAppbar),
+          title: Text(StringAssets.listviewSeparatedAppbar),
           centerTitle: true,
         ),
         body: ListView.separated(

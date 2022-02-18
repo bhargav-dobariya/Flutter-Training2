@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:alert_dialog/Resources/color_assets.dart';
 import 'package:alert_dialog/Resources/string_asset.dart';
 import 'package:alert_dialog/buttons/home_screen_button.dart';
-import 'package:alert_dialog/screens/separated_listview.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -36,17 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 HomeButton(
-                  button_text: StringAssets.ListviewButton,
+                  button_text: StringAssets.listviewButton,
                   button_color: ButtonColor.cadetButton,
                   onPressed: onPressedListview,
                 ),
                 HomeButton(
-                  button_text: StringAssets.ListviewBuilderButton,
+                  button_text: StringAssets.listviewBuilderButton,
                   button_color: ButtonColor.foloraWhiteButton,
                   onPressed: onPressedListBuilder,
                 ),
                 HomeButton(
-                  button_text: StringAssets.ListviewSeparatedbutton,
+                  button_text: StringAssets.listviewSeparatedbutton,
                   button_color: ButtonColor.purpleButton,
                   onPressed: onPressedSaparatedList,
                 )

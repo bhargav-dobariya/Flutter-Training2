@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:listview_task/Resources/color_assets.dart';
-import 'package:listview_task/Resources/string_asset.dart';
+import 'package:alert_dialog/Resources/color_assets.dart';
+import 'package:alert_dialog/Resources/string_asset.dart';
 
 class ListBuilder extends StatelessWidget {
   ListBuilder({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class ListBuilder extends StatelessWidget {
             ),
             onPressed: () => Navigator.of(context).pop(),
           ),
-          title: Text(StringAssets.ListviewBuilderAppbar),
+          title: Text(StringAssets.listviewBuilderAppbar),
           centerTitle: true,
         ),
         body: ListView.builder(
