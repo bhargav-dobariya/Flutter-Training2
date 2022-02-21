@@ -17,6 +17,7 @@ class _InkAlertState extends State<InkAlert> {
   Widget build(BuildContext context) {
     print(widget.title);
     return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       title: Text(widget.title),
       content: SingleChildScrollView(
           child: Column(

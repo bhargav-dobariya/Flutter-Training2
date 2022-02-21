@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 
-class Alert1 extends StatefulWidget {
-  Alert1({Key? key}) : super(key: key);
+class DeleteAlert extends StatefulWidget {
+  DeleteAlert({Key? key}) : super(key: key);
 
   @override
-  State<Alert1> createState() => _Alert1State();
+  State<DeleteAlert> createState() => _DeleteAlertState();
 }
 
-class _Alert1State extends State<Alert1> {
-  bool user1 = false;
+class _DeleteAlertState extends State<DeleteAlert> {
+  bool checkValue = false;
   @override
   Widget build(BuildContext context) {
-    print(user1);
+    print(checkValue);
     return AlertDialog(
-      title: Text("Delete Content"),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: const Text("Delete Content",
+          style: TextStyle(fontWeight: FontWeight.bold)),
       content: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               "Are you sure to remove this content? You can access this file for 7 days in your trash.",
@@ -23,29 +26,28 @@ class _Alert1State extends State<Alert1> {
                 fontSize: 16,
               ),
             ),
-            Center(
-              child: CheckboxListTile(
-                title: const Text(
-                  'Do not show it anymore',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
+            CheckboxListTile(
+              contentPadding: EdgeInsets.all(0),
+              title: const Text(
+                'Do not show it anymore',
+                style: TextStyle(
+                  fontSize: 14,
                 ),
-                value: user1,
-                controlAffinity: ListTileControlAffinity.leading,
-                onChanged: (bool? value) {
-                  setState(() {
-                    user1 = value ?? false;
-                  });
-                },
               ),
+              value: checkValue,
+              controlAffinity: ListTileControlAffinity.leading,
+              onChanged: (bool? value) {
+                setState(() {
+                  checkValue = value ?? false;
+                });
+              },
             ),
           ],
         ),
       ),
       actions: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
               width: 130,
@@ -53,11 +55,11 @@ class _Alert1State extends State<Alert1> {
               child: TextButton(
                   style: TextButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    backgroundColor: Color.fromARGB(255, 176, 176, 177),
+                    backgroundColor: Color(0xffb0b0b1),
                     padding: const EdgeInsets.all(5.0),
-                    primary: Color.fromARGB(255, 0, 0, 0),
+                    primary: Color(0xff000000),
                     textStyle: const TextStyle(fontSize: 15),
                   ),
                   onPressed: () {
@@ -71,16 +73,16 @@ class _Alert1State extends State<Alert1> {
               child: TextButton(
                   style: TextButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    backgroundColor: Color.fromARGB(255, 41, 90, 163),
+                    backgroundColor: Color(0xff3046ff),
                     padding: const EdgeInsets.all(5.0),
-                    primary: Color.fromARGB(255, 255, 255, 255),
+                    primary: Color(0xffffffff),
                     textStyle: const TextStyle(fontSize: 15),
                   ),
                   onPressed: () {
                     Navigator.of(context).pop();
-                    if (user1 = true) {
+                    if (checkValue = true) {
                       print("checkbox selected");
                     }
                   },

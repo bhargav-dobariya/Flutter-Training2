@@ -12,7 +12,9 @@ class _PrivacyAlertState extends State<PrivacyAlert> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text("Privacy info"),
+      title:
+          Text("Privacy info", style: TextStyle(fontWeight: FontWeight.bold)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       content: SingleChildScrollView(
         child: Column(
           children: [
@@ -22,29 +24,29 @@ class _PrivacyAlertState extends State<PrivacyAlert> {
                 fontSize: 16,
               ),
             ),
-            Center(
-              child: Container(
-                width: 270,
-                child: DropdownButton<String>(
-                  value: dropdownValue,
-                  icon: Container(
-                      margin: EdgeInsets.only(left: 140),
-                      child: const Icon(Icons.arrow_downward)),
-                  elevation: 16,
-                  style: const TextStyle(color: Colors.deepPurple),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownValue = newValue!;
-                    });
-                  },
-                  items: <String>['Automatic', 'Always', 'Never']
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text("$value"),
-                    );
-                  }).toList(),
-                ),
+            Container(
+              width: 270,
+              child: DropdownButton<String>(
+                value: dropdownValue,
+                icon: Container(
+                    padding: EdgeInsets.only(left: 140),
+                    alignment: Alignment.topRight,
+                    // margin: EdgeInsets.only(left: 140),
+                    child: const Icon(Icons.arrow_downward)),
+                elevation: 16,
+                style: const TextStyle(color: Colors.deepPurple),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue!;
+                  });
+                },
+                items: <String>['Automatic', 'Always', 'Never']
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text("$value"),
+                  );
+                }).toList(),
               ),
             ),
           ],
@@ -52,7 +54,7 @@ class _PrivacyAlertState extends State<PrivacyAlert> {
       ),
       actions: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
               width: 130,
@@ -62,9 +64,9 @@ class _PrivacyAlertState extends State<PrivacyAlert> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    backgroundColor: Color.fromARGB(255, 176, 176, 177),
+                    backgroundColor: Color(0xffb0b0b1),
                     padding: const EdgeInsets.all(5.0),
-                    primary: Color.fromARGB(255, 0, 0, 0),
+                    primary: Color(0xff000000),
                     textStyle: const TextStyle(fontSize: 15),
                   ),
                   onPressed: () {
@@ -80,9 +82,9 @@ class _PrivacyAlertState extends State<PrivacyAlert> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    backgroundColor: Color.fromARGB(255, 41, 90, 163),
+                    backgroundColor: Color(0xff3046ff),
                     padding: const EdgeInsets.all(5.0),
-                    primary: Color.fromARGB(255, 255, 255, 255),
+                    primary: Color(0xffffffff),
                     textStyle: const TextStyle(fontSize: 15),
                   ),
                   onPressed: () {

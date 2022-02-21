@@ -8,13 +8,15 @@ class SearchbarAlert extends StatefulWidget {
 }
 
 class _SearchbarAlertState extends State<SearchbarAlert> {
-  String RadioGroup = "Position";
+  String _value = "Position";
   String top = "Top";
   String bottom = "Bottom";
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("Search Bar"),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      title: const Text("Search Bar",
+          style: TextStyle(fontWeight: FontWeight.bold)),
       content: SingleChildScrollView(
         child: Column(
           children: const [
@@ -33,9 +35,9 @@ class _SearchbarAlertState extends State<SearchbarAlert> {
           children: [
             Radio(
                 value: top,
-                groupValue: RadioGroup,
+                groupValue: _value,
                 onChanged: (value) {
-                  RadioGroup = top;
+                  _value = top;
                   setState(() {
                     Navigator.of(context).pop();
                     print(value);
@@ -50,9 +52,9 @@ class _SearchbarAlertState extends State<SearchbarAlert> {
           children: [
             Radio(
                 value: bottom,
-                groupValue: RadioGroup,
+                groupValue: _value,
                 onChanged: (value) {
-                  RadioGroup = bottom;
+                  _value = bottom;
                   setState(() {
                     Navigator.of(context).pop();
                     print(value);

@@ -2,14 +2,14 @@ import 'package:alert_dialog/widgets/inkwell_alert.dart';
 import 'package:alert_dialog/widgets/privacy_alert.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton4 extends StatefulWidget {
-  CustomButton4({Key? key}) : super(key: key);
+class InkWellButton extends StatefulWidget {
+  InkWellButton({Key? key}) : super(key: key);
 
   @override
-  State<CustomButton4> createState() => _CustomButton4State();
+  State<InkWellButton> createState() => _InkWellButtonState();
 }
 
-class _CustomButton4State extends State<CustomButton4> {
+class _InkWellButtonState extends State<InkWellButton> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -29,8 +29,8 @@ class _CustomButton4State extends State<CustomButton4> {
               context: context,
               builder: (_) {
                 return InkAlert(
-                    title: "Whoa! Take it easy",
-                    content: "Do you want to fill?");
+                    title: "Do you want to finish the Quiz?",
+                    content: "You Did it!!");
               });
         },
         onLongPress: () {
@@ -38,17 +38,17 @@ class _CustomButton4State extends State<CustomButton4> {
               context: context,
               builder: (_) {
                 return InkAlert(
-                    title: "Whoa! Take it easy",
-                    content: "oops quiz is not created");
+                    title: "Oops! Quiz was not created",
+                    content: "You can try again!");
               });
         },
-        splashColor: Color.fromARGB(255, 37, 131, 194),
+        splashColor: Color(0xffff00bf),
         child: Container(
           margin: const EdgeInsets.only(top: 40),
           height: 55,
           width: 100,
           decoration: BoxDecoration(
-              border: Border.all(color: Color.fromARGB(255, 82, 249, 255)),
+              border: Border.all(color: Color(0xff478585)),
               borderRadius: const BorderRadius.all(Radius.circular(100))),
           child: const Center(
             child: Text(

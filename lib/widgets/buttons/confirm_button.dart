@@ -12,16 +12,16 @@ class _ConfirmButtonState extends State<ConfirmButton> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 30),
-      width: 130,
+      width: 90,
       height: 35,
       child: TextButton(
           style: TextButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(30),
             ),
-            backgroundColor: Color.fromARGB(255, 41, 90, 163),
+            backgroundColor: Color(0xff3643b5),
             padding: const EdgeInsets.all(5.0),
-            primary: Color.fromARGB(255, 255, 255, 255),
+            primary: Color(0xffffffff),
             textStyle: const TextStyle(fontSize: 15),
           ),
           onPressed: () {

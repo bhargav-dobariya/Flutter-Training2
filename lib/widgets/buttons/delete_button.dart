@@ -1,21 +1,21 @@
-import 'package:alert_dialog/widgets/searchbar_alert.dart';
+import 'package:alert_dialog/widgets/delete_dialog.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton3 extends StatefulWidget {
-  CustomButton3({Key? key}) : super(key: key);
+class DeleteButton extends StatefulWidget {
+  DeleteButton({Key? key}) : super(key: key);
 
   @override
-  State<CustomButton3> createState() => _CustomButton3State();
+  State<DeleteButton> createState() => _DeleteButtonState();
 }
 
-class _CustomButton3State extends State<CustomButton3> {
+class _DeleteButtonState extends State<DeleteButton> {
   @override
   Widget build(BuildContext context) {
     void showConfirm() {
       showDialog(
           context: context,
           builder: (_) {
-            return SearchbarAlert();
+            return DeleteAlert();
           });
     }
 
@@ -29,12 +29,11 @@ class _CustomButton3State extends State<CustomButton3> {
         height: 55,
         width: 100,
         decoration: BoxDecoration(
-            color: Color.fromARGB(255, 59, 226, 255),
-            border: Border.all(color: Colors.redAccent),
+            border: Border.all(color: Color(0xff987993)),
             borderRadius: const BorderRadius.all(Radius.circular(100))),
         child: const Center(
           child: Text(
-            "Search Bar",
+            "Delete",
             style: TextStyle(fontSize: 20.0),
           ),
         ),
