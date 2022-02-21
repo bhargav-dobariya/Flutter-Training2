@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class AppBarColor {
-  static Color greenAppBar = const Color(0xff156612);
-  static Color cyanAppBar = const Color(0xff20d6ca);
-  static Color blueAppBar = const Color(0xff1c3391);
+class ColorAsset {
+  static Color greenColor = const Color(0xff156612);
+  static Color cyanAColor = const Color(0xff20d6ca);
+  static Color blueColor = const Color(0xff1c3391);
 }
 
 class ButtonColor {

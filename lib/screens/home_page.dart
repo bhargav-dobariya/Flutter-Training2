@@ -11,17 +11,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  void onPressedListview() {
+  void onPressedGridExtend() {
     // print("listview called");
-    Navigator.pushNamed(context, "/Listview");
+    Navigator.pushNamed(context, "/GridViewExtend");
   }
 
-  void onPressedListBuilder() {
-    Navigator.pushNamed(context, "/ListBuilder");
+  void onPressedGridBuilder() {
+    Navigator.pushNamed(context, "/GridBuilder");
   }
 
-  void onPressedSaparatedList() {
-    Navigator.pushNamed(context, "/SaparatedList");
+  void onPressedGridCount() {
+    Navigator.pushNamed(context, "/GridCount");
   }
 
   @override
@@ -35,19 +35,19 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 HomeButton(
-                  button_text: StringAssets.listviewButton,
+                  button_text: StringAssets.gridviewCountButton,
                   button_color: ButtonColor.cadetButton,
-                  onPressed: onPressedListview,
+                  onPressed: onPressedGridCount,
                 ),
                 HomeButton(
-                  button_text: StringAssets.listviewBuilderButton,
+                  button_text: StringAssets.gridviewBuilderButton,
                   button_color: ButtonColor.foloraWhiteButton,
-                  onPressed: onPressedListBuilder,
+                  onPressed: onPressedGridBuilder,
                 ),
                 HomeButton(
-                  button_text: StringAssets.listviewSeparatedbutton,
+                  button_text: StringAssets.gridviewExtendbutton,
                   button_color: ButtonColor.purpleButton,
-                  onPressed: onPressedSaparatedList,
+                  onPressed: onPressedGridExtend,
                 )
               ],
             ),
