@@ -30,7 +30,7 @@ class _DeleteButtonState extends State<DeleteButton> {
         width: 100,
         decoration: BoxDecoration(
             border: Border.all(color: Color(0xff987993)),
-            borderRadius: const BorderRadius.all(Radius.circular(100))),
+            borderRadius: const BorderRadius.all(Radius.circular(150))),
         child: const Center(
           child: Text(
             "Delete",

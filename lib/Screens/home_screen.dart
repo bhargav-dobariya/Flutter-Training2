@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool user1 = false;
+  // bool user1 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
+        alignment: Alignment.center,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             DeleteButton(),
             PrivacyButton(),
