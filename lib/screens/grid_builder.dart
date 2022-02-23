@@ -1,8 +1,8 @@
-import 'package:alert_dialog/Resources/string_asset.dart';
+import 'package:alert_dialog/resources/string_asset.dart';
 import 'package:alert_dialog/screens/grid_count.dart';
 import 'package:flutter/material.dart';
 
-import '../Resources/color_assets.dart';
+import '../resources/color_assets.dart';
 
 class GridBuilder extends StatelessWidget {
   GridBuilder({Key? key}) : super(key: key);

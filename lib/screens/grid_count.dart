@@ -1,4 +1,4 @@
-import 'package:alert_dialog/Resources/color_assets.dart';
+import 'package:alert_dialog/resources/color_assets.dart';
 import 'package:flutter/material.dart';
 
 class GridCount extends StatefulWidget {

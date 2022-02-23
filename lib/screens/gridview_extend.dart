@@ -1,4 +1,4 @@
-import 'package:alert_dialog/Resources/string_asset.dart';
+import 'package:alert_dialog/resources/string_asset.dart';
 import 'package:flutter/material.dart';
 
 class GridViewExtend extends StatefulWidget {

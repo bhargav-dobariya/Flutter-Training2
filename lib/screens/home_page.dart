@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:alert_dialog/Resources/color_assets.dart';
-import 'package:alert_dialog/Resources/string_asset.dart';
+import 'package:alert_dialog/resources/color_assets.dart';
+import 'package:alert_dialog/resources/string_asset.dart';
 import 'package:alert_dialog/buttons/home_screen_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -36,17 +36,17 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 HomeButton(
                   button_text: StringAssets.gridviewCountButton,
-                  button_color: ButtonColor.cadetButton,
+                  button_color: ColorAsset.cadetButton,
                   onPressed: onPressedGridCount,
                 ),
                 HomeButton(
                   button_text: StringAssets.gridviewBuilderButton,
-                  button_color: ButtonColor.foloraWhiteButton,
+                  button_color: ColorAsset.foloraWhiteButton,
                   onPressed: onPressedGridBuilder,
                 ),
                 HomeButton(
                   button_text: StringAssets.gridviewExtendbutton,
-                  button_color: ButtonColor.purpleButton,
+                  button_color: ColorAsset.purpleButton,
                   onPressed: onPressedGridExtend,
                 )
               ],
