@@ -6,4 +6,7 @@ class StringAssets {
   static String gridviewHelloFlutter = " Hello Flutter";
 //   static String listviewBuilderAppbar = " ListView Builder";
 //   static String listviewSeparatedAppbar = " Separated ListView";
+  static String txtback = "Back";
+  static String txtscreen2 = "Screen-2";
+  static String txtcheckboxselected = "CheckBox Selected";
 }
