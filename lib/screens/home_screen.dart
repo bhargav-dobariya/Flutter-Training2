@@ -10,14 +10,18 @@ class HomeScreen extends StatefulWidget {
     Key? key,
     required this.text,
   }) : super(key: key);
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  String? data = '';
   void onPressedScreen2() async {
-    await (Navigator.pushNamed(context, "/checkboxScreen"));
+    Navigator.pushNamed(context, "/checkboxScreen").then((value) {
+      print(value);
+      data = value as String?;
+      setState(() {});
+    });
   }
 
   @override
@@ -30,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                '${widget.text}',
+                '$data',
                 style: TextStyle(fontSize: 26),
               ),
 

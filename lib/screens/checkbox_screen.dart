@@ -15,14 +15,12 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
   //backbutton method
   void onPressedBack() {
     if (isChecked == true) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => HomeScreen(
-                    text: StringAssets.txtcheckboxselected,
-                  )));
+      Navigator.pop(
+        context,
+        StringAssets.txtcheckboxselected,
+      );
     } else {
-      Navigator.pushNamedAndRemoveUntil(context, '/', (_) => false);
+      Navigator.pop(context, '');
     }
   }
 
@@ -55,7 +53,7 @@ class _CheckboxScreenState extends State<CheckboxScreen> {
 
             ///Button Widget called
             HomeButton(
-                button_text: StringAssets.txtback,
+                button_text: StringAssets.txtmovetoscreen1,
                 button_color: ColorAsset.purpleButton,
                 onPressed: onPressedBack),
           ],

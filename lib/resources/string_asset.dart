@@ -7,6 +7,7 @@ class StringAssets {
 //   static String listviewBuilderAppbar = " ListView Builder";
 //   static String listviewSeparatedAppbar = " Separated ListView";
   static String txtback = "Back";
+  static String txtmovetoscreen1 = "Move to Screen 1";
   static String txtscreen2 = "Screen-2";
   static String txtcheckboxselected = "CheckBox Selected";
 }
