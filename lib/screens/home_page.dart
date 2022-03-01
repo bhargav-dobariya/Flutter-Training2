@@ -1,5 +1,9 @@
 import 'package:alert_dialog/resources/color_assets.dart';
 import 'package:alert_dialog/resources/string_asset.dart';
+import 'package:alert_dialog/screens/event_page.dart';
+import 'package:alert_dialog/screens/favorite_page.dart';
+import 'package:alert_dialog/screens/home_screen.dart';
+import 'package:alert_dialog/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,25 +16,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   final screens = [
-    Center(
-        child: Text(StringAssets.txthomepage, style: TextStyle(fontSize: 30))),
-    Center(
-        child:
-            Text(StringAssets.txtfavoritepage, style: TextStyle(fontSize: 30))),
-    Center(
-        child:
-            Text(StringAssets.txtprofilepage, style: TextStyle(fontSize: 30))),
-    Center(
-        child: Text(StringAssets.txteventPage, style: TextStyle(fontSize: 30))),
+    HomeScreen(),
+    const FavoritePage(),
+    const ProfilePage(),
+    const EventPage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Navigation Bar'),
-        centerTitle: true,
-        backgroundColor: ColorAsset.blueColor,
-      ),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: ColorAsset.blackcolor,
