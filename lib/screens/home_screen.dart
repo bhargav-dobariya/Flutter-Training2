@@ -1,4 +1,5 @@
 import 'package:alert_dialog/main.dart';
+import 'package:alert_dialog/resources/color_assets.dart';
 import 'package:alert_dialog/resources/widgets/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: Text('HomePage'),
+        centerTitle: true,
+        backgroundColor: ColorAsset.blueColor,
       ),
     );
   }
