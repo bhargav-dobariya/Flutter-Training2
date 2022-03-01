@@ -17,5 +17,12 @@ class StringAssets {
   static String txtspam = "Spam";
   static String txtstarred = "Starred";
   static String txttrashmail = "Trash";
-  static String txtfollowup = "Follow Up";
+  static String txthomepage = "Home Page";
+  static String txtfavoritepage = "Favorite Page";
+  static String txtprofilepage = "Profile Page";
+  static String txteventPage = "Event Page";
+  static String txthome = "Home";
+  static String txtstar = "Favorite";
+  static String txtprofile = "Profile";
+  static String txtevent = "Event";
 }

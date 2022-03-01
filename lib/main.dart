@@ -1,5 +1,4 @@
-// import 'package:alert_dialog/screens/checkbox_screen.dart';
-import 'package:alert_dialog/screens/home_screen.dart';
+import 'package:alert_dialog/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(primarySwatch: Colors.blueGrey),
-        home: HomeScreen(),
-        routes: {});
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blueGrey),
+      home: HomePage(),
+    );
   }
 }
