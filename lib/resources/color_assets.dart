@@ -7,4 +7,6 @@ class ColorAsset {
   static Color purpleButton = const Color(0xffb743fa);
   static Color cadetButton = const Color(0xff2dfce1);
   static Color foloraWhiteButton = const Color(0xffFFFAF0);
+  static Color whitecolor = const Color(0xffffffff);
+  static Color skybluecolor = const Color(0xff3b76d4);
 }

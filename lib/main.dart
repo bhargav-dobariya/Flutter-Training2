@@ -1,4 +1,4 @@
-import 'package:alert_dialog/screens/checkbox_screen.dart';
+// import 'package:alert_dialog/screens/checkbox_screen.dart';
 import 'package:alert_dialog/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blueGrey),
-        home: HomeScreen(
-          text: '',
-        ),
-        routes: {
-          "/checkboxScreen": (context) => CheckboxScreen(),
-        });
+        home: HomeScreen(),
+        routes: {});
   }
 }
