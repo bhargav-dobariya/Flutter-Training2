@@ -3,7 +3,7 @@ import 'package:alert_dialog/resources/string_asset.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -19,8 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: ColorAsset.blueColor,
       ),
       body: Center(
-          child:
-              Text(StringAssets.txthomepage, style: TextStyle(fontSize: 30))),
+          child: Text(StringAssets.txthomepage,
+              style: const TextStyle(fontSize: 30))),
     );
   }
 }

@@ -19,8 +19,8 @@ class _EventPageState extends State<EventPage> {
         backgroundColor: ColorAsset.blueColor,
       ),
       body: Center(
-          child:
-              Text(StringAssets.txteventPage, style: TextStyle(fontSize: 30))),
+          child: Text(StringAssets.txteventPage,
+              style: const TextStyle(fontSize: 30))),
     );
   }
 }

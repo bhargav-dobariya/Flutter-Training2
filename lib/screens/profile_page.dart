@@ -20,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: Center(
           child: Text(StringAssets.txtprofilepage,
-              style: TextStyle(fontSize: 30))),
+              style: const TextStyle(fontSize: 30))),
     );
   }
 }

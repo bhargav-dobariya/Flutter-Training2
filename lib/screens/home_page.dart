@@ -7,7 +7,7 @@ import 'package:alert_dialog/screens/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -34,19 +34,19 @@ class _HomePageState extends State<HomePage> {
         }),
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             label: StringAssets.txthome,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.star_border),
+            icon: const Icon(Icons.star_border),
             label: StringAssets.txtfavoritepage,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_box),
+            icon: const Icon(Icons.account_box),
             label: StringAssets.txtprofile,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.event),
+            icon: const Icon(Icons.event),
             label: StringAssets.txtevent,
           ),
         ],
