@@ -19,14 +19,14 @@ class _HomeButtonState extends State<HomeButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20, left: 10),
+      margin: const EdgeInsets.only(top: 20, left: 10),
       child: ElevatedButton(
           onPressed: () {
             widget.onPressed();
           },
           child: Text(
             widget.button_text,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 18,
             ),

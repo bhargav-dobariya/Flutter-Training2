@@ -11,9 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blueGrey),
-      home: HomeScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.blueGrey),
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Shared Preferences'),
+          ),
+          body: const HomePage(),
+        ));
   }
 }
