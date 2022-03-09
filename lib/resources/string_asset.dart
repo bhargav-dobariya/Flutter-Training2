@@ -18,4 +18,13 @@ class StringAssets {
   static String txtstarred = "Starred";
   static String txttrashmail = "Trash";
   static String txtfollowup = "Follow Up";
+  static String txtloginpage = "Login Page";
+  static String txtenterusername = "Enter Username";
+  static String txtusername = "Username";
+  static String txtenterpassword = "Enter Password";
+  static String txtpassword = "Password";
+  static String txtsubmit = "Submit";
+  static String txtwelcometohomepage = "Welcome to Homepage";
+  static String txtyouaresuccessfullyloggedin =
+      "You Are Successfully logged in";
 }

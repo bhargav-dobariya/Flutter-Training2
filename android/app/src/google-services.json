@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "214225794141",
+    "project_id": "loginpage-b272d",
+    "storage_bucket": "loginpage-b272d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214225794141:android:8f1fa92d316ac98bbb89b4",
+        "android_client_info": {
+          "package_name": "com.example.alert_dialog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214225794141-o5jb43m831bflo1im0cbnn0fua2gk247.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJNfjQXjFUeo26bJIfy-1HZ2-p_P65mGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214225794141-o5jb43m831bflo1im0cbnn0fua2gk247.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
