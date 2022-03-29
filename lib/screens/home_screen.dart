@@ -1,58 +1,28 @@
-import 'package:alert_dialog/buttons/home_screen_button.dart';
-import 'package:alert_dialog/resources/color_assets.dart';
-import 'package:alert_dialog/screens/notes_list_screen.dart';
+import 'package:alert_dialog/screens/user_data.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+// import 'package:convert/convert.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final notesController = TextEditingController();
-  void onPressed() {
-    setNotesData(notesController.text);
-  }
-
-  void onPressed2() {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => const NotesListScreen()));
-  }
-
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        children: [
-          TextField(
-            controller: notesController,
-            decoration: const InputDecoration(hintText: "Enter notes"),
-          ),
-          Container(
-              margin: const EdgeInsets.only(top: 20),
-              child: HomeButton(
-                button_text: "save",
-                button_color: ColorAsset.cadetButton,
-                onPressed: onPressed,
-              )),
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            child: HomeButton(
-                button_text: "view notes",
-                button_color: ColorAsset.foloraWhiteButton,
-                onPressed: onPressed2),
-          )
-        ],
+    return Scaffold(
+      body: Center(
+        child: Container(
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UserData()));
+              },
+              child: Text('Click Me')),
+        ),
       ),
     );
-  }
-
-  Future<void> setNotesData(noteValue) async {
-    final SharedPreferences pref = await SharedPreferences.getInstance();
-    pref.setString('noteData', noteValue);
   }
 }

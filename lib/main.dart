@@ -13,11 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blueGrey),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Shared Preferences'),
-          ),
-          body: const HomePage(),
-        ));
+        home: HomeScreen());
   }
 }
