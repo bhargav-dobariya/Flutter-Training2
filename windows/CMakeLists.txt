@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(alert_dialog LANGUAGES CXX)
+project(google_login_app LANGUAGES CXX)
 
-set(BINARY_NAME "alert_dialog")
+set(BINARY_NAME "google_login_app")
 
 cmake_policy(SET CMP0063 NEW)
 

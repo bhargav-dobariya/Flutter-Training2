@@ -1,4 +1,4 @@
-package com.example.alert_dialog
+package com.example.google_login_app
 
 import io.flutter.embedding.android.FlutterActivity
 
