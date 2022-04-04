@@ -9,125 +9,145 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: ColorAsset.whitecolor,
+        backgroundColor: ColorAsset.cardbg,
         body: SafeArea(
             child: Stack(
           fit: StackFit.expand,
           children: [
-            Image.asset("assets/bg_image.jpg",
-                fit: BoxFit.fitHeight,
-                color: ColorAsset.blackcolor.withOpacity(0.4),
-                colorBlendMode: BlendMode.darken),
-            SingleChildScrollView(
-              child: Card(
-                color: ColorAsset.cardbg,
-                margin: const EdgeInsets.all(20),
-                elevation: 20,
-                child: Stack(
+            Stack(
+              children: [
+                Column(
                   children: [
-                    Column(
-                      children: [
-                        Container(
-                          color: ColorAsset.whitecolor,
-                          child: ClipPath(
-                            clipper: DemoClipper(),
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height / 3.5,
-                              child: Image.asset("assets/card_image.jpg",
-                                  fit: BoxFit.cover),
-                            ),
-                          ),
+                    Container(
+                      color: ColorAsset.whitecolor,
+                      child: ClipPath(
+                        clipper: DemoClipper(),
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height / 3.5,
+                          child: Image.asset("assets/card_image.jpg",
+                              fit: BoxFit.cover),
                         ),
-                        ClipPath(
-                          clipper: RowClipper(),
-                          child: Container(
-                            height: 80,
-                            color: ColorAsset.whitecolor,
-                            child: Column(
-                              children: [
-                                Container(
-                                  margin: const EdgeInsets.symmetric(
-                                      horizontal: 17),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "568",
-                                        style: TextStyle(
-                                            color: ColorAsset.titlecolor,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                      Text(
-                                        "668",
-                                        style: TextStyle(
-                                            color: ColorAsset.titlecolor,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ],
-                                  ),
+                      ),
+                    ),
+                    ClipPath(
+                      clipper: RowClipper(),
+                      child: Container(
+                        height: MediaQuery.of(context).size.height / 15,
+                        color: ColorAsset.whitecolor,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width / 12),
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.only(
+                                  left: MediaQuery.of(context).size.width / 22,
+                                  right: MediaQuery.of(context).size.width / 22,
                                 ),
-                                Row(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "568",
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              30,
+                                          color: ColorAsset.titlecolor,
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                    Text(
+                                      "668",
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              30,
+                                          color: ColorAsset.titlecolor,
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       "Followers",
                                       style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              30,
                                           color: ColorAsset.titlecolor,
-                                          fontWeight: FontWeight.w600),
+                                          fontWeight: FontWeight.w700),
                                     ),
                                     Text(
                                       "Following",
                                       style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              30,
                                           color: ColorAsset.titlecolor,
-                                          fontWeight: FontWeight.w600),
+                                          fontWeight: FontWeight.w700),
                                     )
                                   ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height / 2,
-                          color: ColorAsset.cardbg,
-                          child: Column(
-                            children: [PostCardWidget(), PostCardWidget()],
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                     Container(
-                      // color: Colors.black,
-                      margin: EdgeInsets.only(
-                          left: 110,
-                          top: MediaQuery.of(context).size.height / 6.4),
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 2,
+                      color: ColorAsset.cardbg,
                       child: Column(
-                        children: [
-                          const CircleAvatar(
-                            radius: 48,
-                            backgroundImage: AssetImage(
-                              "assets/profile.jpeg",
-                            ),
-                          ),
-                          Text(
-                            "Malet Anderson",
-                            style: TextStyle(
-                                color: ColorAsset.titlecolor,
-                                fontWeight: FontWeight.w800),
-                          )
-                        ],
+                        children: [PostCardWidget(), PostCardWidget()],
                       ),
-                    )
+                    ),
                   ],
                 ),
-              ),
+                Center(
+                  child: Container(
+                    // alignment: Alignment.center,
+                    // color: Colors.black,
+                    margin: EdgeInsets.only(
+                        // left: MediaQuery.of(context).size.width / 3,
+                        top: MediaQuery.of(context).size.height / 5.0),
+
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: MediaQuery.of(context).size.height / 25.0,
+                          backgroundImage: AssetImage(
+                            "assets/profile2.jpg",
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 50,
+                        ),
+                        Text(
+                          "Malet Anderson",
+                          style: TextStyle(
+                              color: ColorAsset.titlecolor,
+                              fontWeight: FontWeight.w900),
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         )));
@@ -138,9 +158,9 @@ class DemoClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path = Path();
-    path.lineTo(0, size.height - 70);
+    path.lineTo(0, size.height - 60);
     path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 70);
+        size.width / 2, size.height, size.width, size.height - 60);
     path.lineTo(size.width, 0);
     path.close();
 
@@ -159,7 +179,7 @@ class RowClipper extends CustomClipper<Path> {
     Path path = Path();
     path.lineTo(0, size.height);
     path.quadraticBezierTo(
-        size.width / 2, size.height - 50, size.width, size.height);
+        size.width / 2, size.height - 30, size.width, size.height);
     path.lineTo(size.width, 0);
     path.close();
 

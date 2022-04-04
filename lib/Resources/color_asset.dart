@@ -11,5 +11,6 @@ class ColorAsset {
   static Color skybluecolor = Color(0xFF3B76D4);
   static Color blackcolor = Color(0xFF000000);
   static Color cardbg = Color(0xFFDBD6D6);
-  static Color titlecolor = Color(0xFF481B66);
+  static Color titlecolor = Color(0xFF7e4b78);
+  static Color visibilityColor = Color(0xFF6B686B);
 }

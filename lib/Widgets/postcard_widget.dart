@@ -20,81 +20,112 @@ class _PostCardWidgetState extends State<PostCardWidget> {
             elevation: 4,
             margin: EdgeInsets.only(top: 15, bottom: 15),
             child: Padding(
-              padding: const EdgeInsets.only(top: 35.0, left: 20, right: 10),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 20,
+                  left: MediaQuery.of(context).size.width / 30,
+                  right: 10),
               child: Column(
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       const CircleAvatar(
-                        radius: 28,
+                        radius: 25,
                         backgroundImage: AssetImage(
-                          "assets/profile.jpeg",
+                          "assets/profile2.jpg",
                         ),
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
                       Text(
-                          "Scoring on the opposition is nothing new for\n Steph Cury.Dancing on them might be.",
+                          "Scoring on the opposition is nothing new for\nSteph Cury.Dancing on them might be.",
                           style: TextStyle(
-                              fontSize:
-                                  MediaQuery.of(context).size.width / 34.5))
+                              fontSize: MediaQuery.of(context).size.width / 30,
+                              fontWeight: FontWeight.w600,
+                              color: ColorAsset.titlecolor))
                     ],
                   ),
                   Container(
-                    margin:
-                        const EdgeInsets.only(top: 20, left: 10, bottom: 10),
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height / 35,
+                        left: MediaQuery.of(context).size.width / 52,
+                        bottom: MediaQuery.of(context).size.height / 50),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 7),
-                          child: Text(
-                            "586",
-                            style: TextStyle(
-                                fontSize: 12, color: ColorAsset.whitecolor),
+                          height: MediaQuery.of(context).size.height / 65,
+                          width: MediaQuery.of(context).size.width / 15,
+                          margin: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width / 28),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width / 120,
+                            ),
+                            // vertical:
+                            //     MediaQuery.of(context).size.height / 420),
+                            child: Center(
+                              child: Text("586",
+                                  style: TextStyle(
+                                      fontSize:
+                                          MediaQuery.of(context).size.width /
+                                              45,
+                                      color: ColorAsset.whitecolor,
+                                      fontWeight: FontWeight.w600)),
+                            ),
                           ),
                           decoration: BoxDecoration(
                               color: ColorAsset.titlecolor,
-                              borderRadius: BorderRadius.circular(5)),
+                              borderRadius: BorderRadius.circular(10)),
                         ),
                         RichText(
                             text: TextSpan(children: [
-                          const WidgetSpan(
+                          WidgetSpan(
                               child: Padding(
                             padding: EdgeInsets.only(right: 5.0),
                             child: Icon(
                               Icons.remove_red_eye_rounded,
-                              size: 15,
+                              color: ColorAsset.visibilityColor,
+                              size: MediaQuery.of(context).size.width / 23,
                             ),
                           )),
                           TextSpan(
                             text: "36 ",
                             style: TextStyle(
-                                fontSize: 11, color: ColorAsset.blackcolor),
+                              fontSize: MediaQuery.of(context).size.width / 30,
+                              color: ColorAsset.visibilityColor,
+                            ),
                           ),
-                          const WidgetSpan(
+                          WidgetSpan(
                               child: Padding(
                             padding: EdgeInsets.only(left: 8.0, right: 5),
                             child: Icon(
                               Icons.comment_bank_rounded,
-                              size: 15,
+                              color: ColorAsset.visibilityColor,
+                              size: MediaQuery.of(context).size.width / 23,
                             ),
                           )),
                           TextSpan(
                             text: "6 ",
                             style: TextStyle(
-                                fontSize: 11, color: ColorAsset.blackcolor),
+                              fontSize: MediaQuery.of(context).size.width / 30,
+                              color: ColorAsset.visibilityColor,
+                            ),
                           ),
-                          const WidgetSpan(
+                          WidgetSpan(
                               child: Padding(
                             padding: EdgeInsets.only(left: 8.0, right: 5),
-                            child: Icon(Icons.share_rounded, size: 15),
+                            child: Icon(
+                              Icons.share_rounded,
+                              size: MediaQuery.of(context).size.width / 23,
+                              color: ColorAsset.visibilityColor,
+                            ),
                           )),
                           TextSpan(
                             text: "2 ",
                             style: TextStyle(
-                                fontSize: 11, color: ColorAsset.blackcolor),
+                              color: ColorAsset.visibilityColor,
+                              fontSize: MediaQuery.of(context).size.width / 30,
+                            ),
                           ),
                         ]))
                       ],
@@ -103,22 +134,34 @@ class _PostCardWidgetState extends State<PostCardWidget> {
                 ],
               ),
             )),
-        Container(
-            margin: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width / 5.2,
-            ),
-            height: MediaQuery.of(context).size.height / 28,
-            width: MediaQuery.of(context).size.width / 2.2,
-            child: Center(
-              child: Text(
-                "February 22,2016",
-                style: TextStyle(color: ColorAsset.whitecolor),
+        Center(
+          child: Container(
+              height: MediaQuery.of(context).size.height / 28,
+              width: MediaQuery.of(context).size.width / 2.2,
+              child: Center(
+                child: Text(
+                  "February 22,2016",
+                  style: TextStyle(
+                      color: ColorAsset.whitecolor,
+                      fontSize: MediaQuery.of(context).size.width / 33,
+                      fontWeight: FontWeight.w700),
+                ),
               ),
-            ),
-            decoration: BoxDecoration(
-              color: ColorAsset.titlecolor,
-              borderRadius: BorderRadius.circular(10),
-            )),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorAsset.titlecolor,
+
+                    blurRadius: 3,
+                    offset:
+                        const Offset(0.0, 3.0), // changes position of shadow
+                  ),
+                ],
+                color: ColorAsset.titlecolor,
+                borderRadius: BorderRadius.circular(
+                    MediaQuery.of(context).size.width / 20),
+              )),
+        ),
       ],
     );
   }
