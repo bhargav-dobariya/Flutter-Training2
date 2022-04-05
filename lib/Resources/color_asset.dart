@@ -8,9 +8,10 @@ class ColorAsset {
   static Color cadetButton = const Color(0xff2dfce1);
   static Color foloraWhiteButton = const Color(0xffFFFAF0);
   static Color whitecolor = const Color(0xffffffff);
-  static Color skybluecolor = Color(0xFF3B76D4);
-  static Color blackcolor = Color(0xFF000000);
-  static Color cardbg = Color(0xFFDBD6D6);
-  static Color titlecolor = Color(0xFF7e4b78);
-  static Color visibilityColor = Color(0xFF6B686B);
+  static Color skybluecolor = const Color(0xFF3B76D4);
+  static Color blackcolor = const Color(0xFF000000);
+  static Color cardbg = const Color(0xFFDBD6D6);
+  static Color titlecolor = const Color(0xFF7e4b78);
+  static Color visibilityColor = const Color(0xFF6B686B);
+  static Color shadowcolor = Color.fromARGB(255, 61, 28, 105);
 }

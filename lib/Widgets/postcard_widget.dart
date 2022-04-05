@@ -134,25 +134,26 @@ class _PostCardWidgetState extends State<PostCardWidget> {
             )),
         Center(
           child: Container(
-              height: MediaQuery.of(context).size.height / 28,
-              width: MediaQuery.of(context).size.width / 2.2,
-              child: Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width / 24,
+                    vertical: MediaQuery.of(context).size.height / 85),
                 child: Text(
                   "February 22,2016",
                   style: TextStyle(
                       color: ColorAsset.whitecolor,
-                      fontSize: MediaQuery.of(context).size.width / 33,
+                      fontSize: MediaQuery.of(context).size.width / 36,
                       fontWeight: FontWeight.w700),
                 ),
               ),
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: ColorAsset.titlecolor,
+                    color: ColorAsset.shadowcolor,
 
-                    blurRadius: 3,
+                    blurRadius: 6,
                     offset:
-                        const Offset(0.0, 3.0), // changes position of shadow
+                        const Offset(0.0, 6.0), // changes position of shadow
                   ),
                 ],
                 color: ColorAsset.titlecolor,

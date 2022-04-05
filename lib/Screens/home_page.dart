@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
                                       "568",
@@ -73,33 +73,30 @@ class HomePage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              Container(
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Followers",
-                                      style: TextStyle(
-                                          fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              30,
-                                          color: ColorAsset.titlecolor,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                    Text(
-                                      "Following",
-                                      style: TextStyle(
-                                          fontSize: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              30,
-                                          color: ColorAsset.titlecolor,
-                                          fontWeight: FontWeight.w700),
-                                    )
-                                  ],
-                                ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Followers",
+                                    style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                30,
+                                        color: ColorAsset.titlecolor,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                  Text(
+                                    "Following",
+                                    style: TextStyle(
+                                        fontSize:
+                                            MediaQuery.of(context).size.width /
+                                                30,
+                                        color: ColorAsset.titlecolor,
+                                        fontWeight: FontWeight.w700),
+                                  )
+                                ],
                               ),
                             ],
                           ),
@@ -110,7 +107,6 @@ class HomePage extends StatelessWidget {
                       margin: EdgeInsets.symmetric(
                           horizontal: MediaQuery.of(context).size.width / 20),
                       width: MediaQuery.of(context).size.width,
-                      // height: MediaQuery.of(context).size.height / 2,
                       color: ColorAsset.cardbg,
                       child: SingleChildScrollView(
                         child: Column(
@@ -122,12 +118,8 @@ class HomePage extends StatelessWidget {
                 ),
                 Center(
                   child: Container(
-                    // alignment: Alignment.center,
-                    // color: Colors.black,
                     margin: EdgeInsets.only(
-                        // left: MediaQuery.of(context).size.width / 3,
                         top: MediaQuery.of(context).size.height / 5.0),
-
                     child: Column(
                       children: [
                         CircleAvatar(
