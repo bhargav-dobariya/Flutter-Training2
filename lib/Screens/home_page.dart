@@ -107,9 +107,10 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                      margin: EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width / 20),
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 2,
+                      // height: MediaQuery.of(context).size.height / 2,
                       color: ColorAsset.cardbg,
                       child: SingleChildScrollView(
                         child: Column(

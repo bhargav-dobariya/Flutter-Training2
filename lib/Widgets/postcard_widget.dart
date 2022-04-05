@@ -15,7 +15,7 @@ class _PostCardWidgetState extends State<PostCardWidget> {
       children: [
         Card(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5.0),
+              borderRadius: BorderRadius.circular(8.0),
             ),
             elevation: 4,
             margin: EdgeInsets.only(top: 15, bottom: 15),
@@ -55,7 +55,7 @@ class _PostCardWidgetState extends State<PostCardWidget> {
                           height: MediaQuery.of(context).size.height / 65,
                           width: MediaQuery.of(context).size.width / 15,
                           margin: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width / 23),
+                              left: MediaQuery.of(context).size.width / 36),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                               horizontal:
