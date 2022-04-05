@@ -10,8 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: ColorAsset.cardbg,
-        body: SafeArea(
-            child: Stack(
+        body: Stack(
           fit: StackFit.expand,
           children: [
             Stack(
@@ -112,8 +111,10 @@ class HomePage extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       height: MediaQuery.of(context).size.height / 2,
                       color: ColorAsset.cardbg,
-                      child: Column(
-                        children: [PostCardWidget(), PostCardWidget()],
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [PostCardWidget(), PostCardWidget()],
+                        ),
                       ),
                     ),
                   ],
@@ -150,7 +151,7 @@ class HomePage extends StatelessWidget {
               ],
             )
           ],
-        )));
+        ));
   }
 }
 
