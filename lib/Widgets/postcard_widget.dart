@@ -55,14 +55,12 @@ class _PostCardWidgetState extends State<PostCardWidget> {
                           height: MediaQuery.of(context).size.height / 65,
                           width: MediaQuery.of(context).size.width / 15,
                           margin: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width / 28),
+                              left: MediaQuery.of(context).size.width / 23),
                           child: Padding(
                             padding: EdgeInsets.symmetric(
                               horizontal:
                                   MediaQuery.of(context).size.width / 120,
                             ),
-                            // vertical:
-                            //     MediaQuery.of(context).size.height / 420),
                             child: Center(
                               child: Text("586",
                                   style: TextStyle(
