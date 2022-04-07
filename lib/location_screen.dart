@@ -1,3 +1,4 @@
+import 'package:google_login_app/Resources/string_asset.dart';
 import 'package:location/location.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -20,7 +21,7 @@ class _LocationScreenState extends State<LocationScreen> {
       Set<Marker> _createMarker() {
         return <Marker>{
           Marker(
-            markerId: const MarkerId("location"),
+            markerId: MarkerId(AppString.txtLocation),
             position: LatLng(l.latitude!.toDouble(), l.longitude!.toDouble()),
             icon: BitmapDescriptor.defaultMarker,
             infoWindow: const InfoWindow(
@@ -43,25 +44,22 @@ class _LocationScreenState extends State<LocationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Google Map Demo'),
+        appBar: AppBar(title: Text(AppString.txtGoogleMapDemo)),
         backgroundColor: Colors.green[700],
-      ),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Stack(
-          children: [
-            GoogleMap(
-              initialCameraPosition:
-                  CameraPosition(target: _initialcameraposition),
-              mapType: MapType.satellite,
-              onMapCreated: _onMapCreated,
-              myLocationEnabled: true,
-            ),
-          ],
-        ),
-      ),
-    );
+        body: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: Stack(
+            children: [
+              GoogleMap(
+                initialCameraPosition:
+                    CameraPosition(target: _initialcameraposition),
+                mapType: MapType.satellite,
+                onMapCreated: _onMapCreated,
+                myLocationEnabled: true,
+              ),
+            ],
+          ),
+        ));
   }
 }
