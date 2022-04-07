@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(google_login_app LANGUAGES CXX)
+project(google_maps_in_flutter LANGUAGES CXX)
 
-set(BINARY_NAME "google_login_app")
+set(BINARY_NAME "google_maps_in_flutter")
 
 cmake_policy(SET CMP0063 NEW)
 
