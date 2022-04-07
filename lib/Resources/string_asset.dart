@@ -49,6 +49,9 @@ class AppString {
   static String txtChat = "Chats";
   static String txtSearch = "Search";
   static String txtLoginWithGoogle = "Login With Google";
+  static String txtLoginWithFb = "Login With Facebook";
+  static String txtloggedinfb =
+      "Congratulations! You're Successfully Logged In through Facebook Account";
   static String txtSuccessfullyLoggedIn =
       "Congratulations! You're Successfully Logged In";
 }
