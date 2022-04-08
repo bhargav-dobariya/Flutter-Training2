@@ -46,6 +46,10 @@ class AppString {
   static String txtNotifaications = "Notifications";
   static String txtMarkAllAsRead = "Mark All As Read";
   static String txtToday = "Today";
+  static String txtDaveGamache = "Dave Gamache";
+  static String txtDesignerOnMedium = "Designer on Medium Obvious";
+  static String txtPost = "Posts";
+  static String txtCollection = "Collections";
   static String txtDiana = "@diana";
   static String txtMark = "@mark";
   static String txtChat = "Chats";

@@ -1,0 +1,4 @@
+<resources>
+    <string name="facebook_app_id">xxxxxxxxx</string>
+    <string name="facebook_client_token">xxxxxxxxxxx</string>
+</resources>
