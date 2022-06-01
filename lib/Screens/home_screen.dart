@@ -12,13 +12,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Center(
-        child: Container(
-          child: Text(AppLocalizations.of(context)!.homePageText),
+        appBar: AppBar(
+          title: const Text("App Localization Demo"),
         ),
-      ),
-    ));
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Center(
+            child: Container(
+              child: Text(AppLocalizations.of(context)!.homePageText),
+            ),
+          ),
+        ));
   }
 }
