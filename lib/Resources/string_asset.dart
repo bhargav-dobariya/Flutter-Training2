@@ -1,5 +1,6 @@
 class AppString {
   static String txtWelcome = "Welcome!";
+  static String connectivityTask = "Connectivity Animation Task";
   static String txtLocation = "location";
   static String txtGoogleMapDemo = "Google Map Demo";
   static String txtSignInToContinue = "Sign in to continue";

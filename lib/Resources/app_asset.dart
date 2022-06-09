@@ -9,8 +9,11 @@ class ColorAsset {
   static Color foloraWhiteButton = const Color(0xffFFFAF0);
   static Color whitecolor = const Color(0xffffffff);
   static Color skybluecolor = const Color(0xff3b76d4);
-  static Color blackcolor = Color(0xFF030303);
-  static Color greycolor = Color(0xFF4B4949);
-  static Color darkgreycolor = Color(0xFF2C2929);
-  static Color lightgreycolor = Color(0xFFA39E9E);
+  static Color blackcolor = const Color(0xFF030303);
+  static Color greycolor = const Color(0xFF4B4949);
+  static Color darkgreycolor = const Color(0xFF2C2929);
+  static Color lightgreycolor = const Color(0xFFA39E9E);
+  static Color lightgreycolor2 = const Color(0xFFEAE3E3);
+  static Color lightgreeenColor = const Color(0xFF128633);
+  static Color lightRedColor = const Color.fromARGB(255, 221, 20, 20);
 }
