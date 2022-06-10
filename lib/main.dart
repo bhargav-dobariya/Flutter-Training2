@@ -1,82 +1,60 @@
-void main(List<String> args) {
-  void main() {
-//fixed length list
-    var fixedList = List<int>.filled(5, 0);
+void main() {
+// 1)addAll Method :- add all the element from another map data;
+//  List ls = ["bhargav","mayank"];
+//  Map map1 = {1 : 'Bhargav',
+//       2 : 'rohan',
+//       3 : 'kapil',
+//       4 : 'vaidehee'};
 
-//fixedList.add(10);
-    print(fixedList);
+// Map map2 = {"trainee" : "trainer"};
+//   map2.addAll(map1);
 
-    var list = [2, 5, 0, 9];
-    list.add(90);
+// print(map2);
 
-//list.indexof('4');
+// 2) addEntries method all elements in map
 
-//will remove the given element from list
-// list.remove(5);
+// 3) clear()
+// Map fruits = {1 :'mango',2 :'watermelon',3 :'orange'};
+//   print(fruits);
+//   fruits.clear();
+//   print(fruits);
 
-//list.removeLast();
-//list.insert(1,24);
-//list.replaceRange(0,2,[3,8]);
-// list.sort();
+//4) containsKey,isEmpty return bool
+  Map fruits = {1: 'mango', 2: 'watermelon', 3: 'orange'};
+// print(fruits.containsKey(2));
 
-//gives random number
-// list.shuffle();
+  print(fruits.isEmpty); //bool
 
-// var list2 = List.empty();
+  print(fruits.isNotEmpty); // bool
 
-//final numbers = <int>[1,2,3];
+  print(fruits.keys); // returns keys
 
-//Creates a list from elements. [...]
-// var list3 = List.of(iterable elements);
+  print(fruits.length); // return length
 
-//Creates an unmodifiable list
-// var list3 = List.unmodifiable(iterable)
+  print(fruits.values); // returns values
 
-//returns first element
-// print(list.first);
+  print(fruits.containsValue('mango')); //returns bool
+  fruits.forEach((k, v) {
+    print('$k: $v');
+  });
 
-//bool
-// list.isEmpty;
-// list.isNotEmpty;
+  fruits.putIfAbsent(9, () => 'Random');
 
-//give reversed order
-// print(list.reversed);
-//gives type of list
+  print(fruits); // add value if key are not exist in map
 
-//list.single only works when list contains only one element
-//it will return that one element
+  fruits.remove(9); //remove at specified keys
 
-//~~~~~~~~Methods~~~~~~~~~~~~
-//add element in list
-// list.add(2);
+  print("toString:" + fruits.toString());
 
-//adds multiple element
-// list.addAll([3,2,4]);
+  fruits.update(3, (value) => "update");
+  print(fruits); //updates the specified key's value.
 
-//returns bool, we can add condition in any method
-// var list2 = list.any((element) => element >= 5);
-// print(list2);
+  print(fruits[1] == fruits[2]); //it compares the specified key of values
 
-//list.clear();
+  //= operator add new value at specified key
+  fruits[5] = "banana";
+  print(fruits[5]);
 
-//gives boolean value
-// print(list.contains(5));
-
-//returns that index element
-// var list3 = list.elementAt(2);
-
-//every => specify that all the element fullfill th condition or not returns bool
-// print(list.every((e) => e>1));
-
-// firstWhere returns first statisfied element index
-// print(list.firstWhere((e)=> e<5));
-
-//list.indexOf('element')
-
-//list.removewhere => removes all the elements from list that satisfy test
-// print(list.removeWhere((e) => e == 2));
-
-//asMap method returns the map from list
-// print(list.asMap());
-  }
+  Map fruitsUnmodifiable = Map.unmodifiable(fruits);
+//fruitsUnmodifiable[1] = " lemon"; can't able to modify the map
 }
