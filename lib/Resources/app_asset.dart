@@ -15,5 +15,8 @@ class ColorAsset {
   static Color lightgreycolor = const Color(0xFFA39E9E);
   static Color lightgreycolor2 = const Color(0xFFEAE3E3);
   static Color lightgreeenColor = const Color(0xFF128633);
-  static Color lightRedColor = const Color.fromARGB(255, 221, 20, 20);
+  static Color drawerColor = const Color(0xFF82736c);
+  static Color cardTitleColor = const Color(0xFFb8b0a5);
+
+  static Color lightRedColor = const Color(0xFFDD1414);
 }

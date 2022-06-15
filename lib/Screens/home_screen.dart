@@ -1,6 +1,4 @@
-import 'dart:async';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_login_app/Resources/app_asset.dart';
 import 'package:google_login_app/Resources/string_asset.dart';
@@ -13,165 +11,290 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Color _mobileConnectionColor = ColorAsset.whitecolor;
-  Color _wifiConnectionColor = ColorAsset.whitecolor;
-  Color _mobileIconColor = ColorAsset.blackcolor;
-  Color _wifiIconColor = ColorAsset.blackcolor;
-
-  bool _visible = true;
-  bool _visible2 = false;
-  double _mobileIconSize = 40;
-  double _mobileWidth = 50;
-  double _mobileHeight = 50;
-
-  double _wifiIconSize = 20;
-  double _wifiWidth = 50;
-  double _wifiHeight = 50;
-  late StreamSubscription _subscription;
-
-  void connectivityStatus(ConnectivityResult result) {
-    print("Working");
-    if (result == ConnectivityResult.mobile) {
-      setState(() {
-        _mobileHeight = 70;
-        _mobileWidth = 70;
-        _mobileIconSize = 40;
-        _wifiIconSize = 20;
-        _wifiWidth = 50;
-        _wifiHeight = 50;
-        _visible2 = true;
-        _visible = false;
-        _mobileConnectionColor = ColorAsset.lightgreeenColor;
-        _wifiConnectionColor = ColorAsset.whitecolor;
-        _mobileIconColor = ColorAsset.whitecolor;
-        _wifiIconColor = ColorAsset.blackcolor;
-      });
-    } else if (result == ConnectivityResult.wifi) {
-      setState(() {
-        _wifiHeight = 70;
-        _wifiWidth = 70;
-        _wifiIconSize = 40;
-        _mobileHeight = 50;
-        _mobileWidth = 50;
-        _mobileIconSize = 20;
-        _visible = false;
-        _visible2 = true;
-        _mobileIconColor = ColorAsset.blackcolor;
-        _wifiIconColor = ColorAsset.whitecolor;
-        _mobileConnectionColor = ColorAsset.whitecolor;
-        _wifiConnectionColor = ColorAsset.lightgreeenColor;
-      });
-    } else {
-      setState(() {
-        _mobileHeight = 50;
-        _mobileWidth = 50;
-        _mobileIconSize = 20;
-        _wifiHeight = 50;
-        _wifiWidth = 50;
-        _wifiIconSize = 20;
-        _visible = true;
-        _mobileConnectionColor = ColorAsset.whitecolor;
-        _wifiConnectionColor = ColorAsset.whitecolor;
-        _mobileConnectionColor = ColorAsset.whitecolor;
-        _wifiConnectionColor = ColorAsset.whitecolor;
-        _wifiIconColor = ColorAsset.blackcolor;
-      });
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    _subscription =
-        Connectivity().onConnectivityChanged.listen(connectivityStatus);
-  }
-
-  @override
-  void dispose() {
-    _subscription.cancel();
-    super.dispose();
-  }
+  int activeIndex = 0;
+  late var card;
+  late var stringCard;
+  final cardImages = [
+    "assets/bedroom1.jpeg",
+    "assets/bedroom2.webp",
+    "assets/bedroom3.jpeg",
+//"https://pixabay.com/photos/bed-bedroom-carpet-curtains-1839183/"
+// "https://pixabay.com/photos/bedroom-interior-design-house-home-389254/",
+// "https://cdn.pixabay.com/photo/2015/06/29/08/20/leave-room-825317__340.jpg",
+  ];
+  final cardTitle = [
+    "${AppString.txtBedroom}\n${AppString.txt3by10}",
+    "${AppString.txtLivingRoom}\n${AppString.txt5by13}",
+    "${AppString.txtBedroom}\n${AppString.txt3by12}",
+  ];
+  late double _deviceHeight;
+  late double _deviceWidth;
+  var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: ColorAsset.foloraWhiteButton,
-        appBar: AppBar(
-          title: Text(AppString.connectivityTask),
-          backgroundColor: ColorAsset.blackcolor,
-          centerTitle: true,
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              buildContainer1(
-                  _mobileHeight,
-                  _mobileWidth,
-                  _mobileIconSize,
-                  Icon(
-                    Icons.signal_cellular_alt_sharp,
-                    color: _mobileIconColor,
-                    size: _mobileIconSize,
-                  ),
-                  _mobileConnectionColor),
-              buildContainer1(
-                  _wifiHeight,
-                  _wifiWidth,
-                  _wifiIconSize,
-                  Icon(
-                    Icons.wifi_sharp,
-                    color: _wifiIconColor,
-                    size: _wifiIconSize,
-                  ),
-                  _wifiConnectionColor),
-              buildContainer2()
-            ],
-          ),
-        ));
+    _deviceHeight = MediaQuery.of(context).size.height;
+    _deviceWidth = MediaQuery.of(context).size.width;
+    return SafeArea(child: _buildUi());
   }
 
-  Widget buildContainer1(
-      double height, double width, double size, Icon _icon, Color _color) {
-    return Visibility(
-      visible: _visible2,
-      child: AnimatedContainer(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.0),
-              color: _color,
-              boxShadow: [
-                BoxShadow(
-                  color: ColorAsset.lightgreycolor2,
-                  blurRadius: 30.0,
-                )
-              ]),
-          duration: const Duration(seconds: 3),
-          width: width,
-          height: height,
-          child: _icon),
+  Widget _buildUi() {
+    return Scaffold(
+      key: scaffoldKey,
+      drawer: Padding(
+        padding: EdgeInsets.only(bottom: _deviceHeight * 0.18),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(60), topRight: Radius.circular(60)),
+          child: SizedBox(
+            width: _deviceWidth * 0.45,
+            height: _deviceHeight * 0.9,
+            child: Drawer(
+              backgroundColor: ColorAsset.drawerColor,
+              child: ListView(
+                children: [
+                  Container(
+                    height: _deviceHeight * 0.16,
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home, color: ColorAsset.whitecolor),
+                    title: Text(
+                      AppString.txtFamily,
+                      style: TextStyle(color: ColorAsset.whitecolor),
+                    ),
+                  ),
+                  SizedBox(
+                    height: _deviceHeight * 0.04,
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.devices, color: ColorAsset.whitecolor),
+                    title: Text(AppString.txtDevices,
+                        style: TextStyle(color: ColorAsset.whitecolor)),
+                  ),
+                  SizedBox(
+                    height: _deviceHeight * 0.04,
+                  ),
+                  ListTile(
+                    leading:
+                        Icon(Icons.timer_sharp, color: ColorAsset.whitecolor),
+                    title: Text(AppString.txtFamily,
+                        style: TextStyle(color: ColorAsset.whitecolor)),
+                  ),
+                  SizedBox(
+                    height: _deviceHeight * 0.04,
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.settings, color: ColorAsset.whitecolor),
+                    title: Text(AppString.txtsettings,
+                        style: TextStyle(color: ColorAsset.whitecolor)),
+                  ),
+                  SizedBox(
+                    height: _deviceHeight * 0.04,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          leading: Padding(
+            padding: EdgeInsets.only(left: _deviceWidth * 0.01),
+            child: GestureDetector(
+                onTap: () => scaffoldKey.currentState?.openDrawer(),
+                child: SizedBox(
+                    height: _deviceHeight * 0.5,
+                    child: Image.asset(
+                      "assets/IMG_7907.JPG",
+                      fit: BoxFit.contain,
+                    ))),
+          )),
+      body: _bodyUi(),
     );
   }
 
-  Widget buildContainer2() {
-    return Visibility(
-        visible: _visible,
-        child: AnimatedContainer(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
-                color: ColorAsset.lightRedColor,
-                boxShadow: [
-                  BoxShadow(
-                    color: ColorAsset.lightgreycolor2,
-                    blurRadius: 30.0,
-                  )
-                ]),
-            duration: const Duration(seconds: 3),
-            width: 70,
-            height: 70,
-            child: Icon(
-              Icons.airplanemode_on_sharp,
-              color: ColorAsset.whitecolor,
-            )));
+  Widget _bodyUi() {
+    return Padding(
+      padding: EdgeInsets.only(left: _deviceWidth * 0.05),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.topRight,
+            child: SizedBox(
+                child: Container(
+              width: _deviceWidth * 0.24,
+              height: _deviceHeight * 0.065,
+              // width: _deviceWidth * 0.99,
+              decoration: BoxDecoration(
+                  color: ColorAsset.whitecolor,
+                  border: const Border(
+                    right: BorderSide.none,
+                  ),
+                  boxShadow: const [
+                    BoxShadow(
+                      offset: Offset(0, 0),
+                      blurRadius: 2,
+                      spreadRadius: 2,
+                      color: Colors.black26,
+                    ),
+                  ],
+                  borderRadius:
+                      const BorderRadius.horizontal(left: Radius.circular(30))),
+            )),
+          ),
+          Container(
+            margin: EdgeInsets.only(
+                left: _deviceWidth * 0.75, top: _deviceHeight * 0.0072),
+            height: _deviceHeight * 0.048,
+            width: _deviceWidth * 0.095,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 0),
+                  blurRadius: 2,
+                  spreadRadius: 2,
+                  color: Colors.black26,
+                ),
+              ],
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
+            child: Center(
+              child: Text(
+                "\u207a",
+                style: TextStyle(
+                    fontSize: _deviceHeight * 0.06,
+                    color: ColorAsset.lightgreycolor),
+              ),
+            ),
+          ),
+          _buildUiTemperature(),
+          _buildUiGreetings(),
+          Container(
+              margin: EdgeInsets.only(
+                top: _deviceHeight * 0.36,
+              ),
+              child: Text(
+                AppString.txtRooms,
+                style: TextStyle(
+                    color: ColorAsset.lightgreycolor,
+                    fontSize: _deviceHeight * 0.025,
+                    fontWeight: FontWeight.w700),
+              )),
+          Container(
+            margin: EdgeInsets.only(
+              top: _deviceHeight * 0.43,
+            ),
+            child: CarouselSlider.builder(
+                itemCount: cardImages.length,
+                itemBuilder: ((context, index, realIndex) {
+                  card = cardImages[index];
+                  stringCard = cardTitle[index];
+
+                  return buildImage(cardImages, cardTitle, index);
+                }),
+                options: CarouselOptions(
+                  initialPage: 0,
+                  enableInfiniteScroll: false,
+                  enlargeCenterPage: true,
+                  viewportFraction: 0.39,
+                  height: 280,
+                  onPageChanged: (index, reason) =>
+                      setState((() => activeIndex = index)),
+                )),
+          )
+        ],
+      ),
+    );
   }
+
+  ClipRRect _buildUiCard() {
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(25.0),
+        child: Image.asset(
+          "assets/bedroom1.jpeg",
+          fit: BoxFit.fitHeight,
+          height: _deviceHeight * 0.35,
+          width: _deviceWidth * 0.32,
+        ));
+  }
+
+  Column _buildUiGreetings() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+            margin: EdgeInsets.only(
+                top: _deviceHeight * 0.23, bottom: _deviceHeight * 0.01),
+            child: RichText(
+              text: TextSpan(
+                text: AppString.txtHello,
+                style: TextStyle(
+                    fontSize: _deviceHeight * 0.032,
+                    color: ColorAsset.greycolor),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: AppString.txtDaniela,
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                ],
+              ),
+            )),
+        Text(AppString.txtWelcomeToYourSmartHome,
+            style: TextStyle(
+                color: ColorAsset.lightgreycolor, fontWeight: FontWeight.w500))
+      ],
+    );
+  }
+
+  Widget _buildUiTemperature() {
+    return Row(
+      children: [
+        Container(
+            margin: EdgeInsets.only(top: _deviceHeight * 0.09),
+            child: Text(
+              AppString.txt25,
+              style: TextStyle(
+                  fontSize: _deviceHeight * 0.068,
+                  color: ColorAsset.lightgreycolor),
+            )),
+        Container(
+          margin: EdgeInsets.only(
+              top: _deviceHeight * 0.04, left: _deviceWidth * 0.02),
+          child: Text(
+            '\u2103',
+            style: TextStyle(
+                fontSize: _deviceHeight * 0.03,
+                color: ColorAsset.lightgreycolor),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget buildImage(cardImages, cardTitle, int index) => Stack(
+        children: [
+          Container(
+            // color: Colors.black,
+            margin: const EdgeInsets.symmetric(horizontal: 8),
+            child: ClipRRect(
+                child: Image.asset(
+                  card,
+                  fit: BoxFit.cover,
+                  height: _deviceHeight * 0.8,
+                  width: _deviceWidth * 0.4,
+                ),
+                borderRadius: BorderRadius.circular(30)),
+          ),
+          Center(
+              child: Text(
+            stringCard,
+            style: TextStyle(
+                color: ColorAsset.whitecolor,
+                fontSize: _deviceHeight * 0.019,
+                fontWeight: FontWeight.w700),
+          ))
+        ],
+      );
 }

@@ -54,6 +54,11 @@ class AppString {
   static String txtDiana = "@diana";
   static String txtMark = "@mark";
   static String txtChat = "Chats";
+  static String txtDevices = "Devices";
+  static String txtScenes = "Scenes";
+  static String txtSettings = "Settings";
+  static String txtFamily = "Family";
+
   static String txtSearch = "Search";
   static String txtLoginWithGoogle = "Login With Google";
   static String txtLoginWithFb = "Login With Facebook";
@@ -61,4 +66,18 @@ class AppString {
       "Congratulations! You're Successfully Logged In through Facebook Account";
   static String txtSuccessfullyLoggedIn =
       "Congratulations! You're Successfully Logged In";
+  static String txt25 = "25";
+  static String txtHello = "Hello,";
+  static String txtDaniela = " Daniela!";
+  static String txtWelcomeToYourSmartHome = "Welcome to your smart home.";
+  static String txtRooms = "Rooms";
+  static String txtBedroom = "Bedroom";
+  static String txtLivingRoom = "LivingRoom";
+  static String txt3by10 = "3/10";
+  static String txt5by13 = "5/13";
+  static String txt3by12 = "3/12";
+  static String txtfamily = "Family";
+  static String txtdevices = "Devices";
+  static String txtscenes = "Scenes";
+  static String txtsettings = "Settings";
 }
