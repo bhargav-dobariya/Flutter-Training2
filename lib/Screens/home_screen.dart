@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_login_app/Resources/app_asset.dart';
 import 'package:google_login_app/Resources/string_asset.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,9 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
     "assets/bedroom1.jpeg",
     "assets/bedroom2.webp",
     "assets/bedroom3.jpeg",
-//"https://pixabay.com/photos/bed-bedroom-carpet-curtains-1839183/"
-// "https://pixabay.com/photos/bedroom-interior-design-house-home-389254/",
-// "https://cdn.pixabay.com/photo/2015/06/29/08/20/leave-room-825317__340.jpg",
   ];
   final cardTitle = [
     "${AppString.txtBedroom}\n${AppString.txt3by10}",
@@ -204,7 +202,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPageChanged: (index, reason) =>
                       setState((() => activeIndex = index)),
                 )),
-          )
+          ),
+          Container(
+            // height: 10,
+
+            alignment: Alignment.bottomCenter,
+            margin: const EdgeInsets.only(bottom: 12),
+            child: Material(
+              elevation: 2,
+              child: AnimatedSmoothIndicator(
+                  activeIndex: activeIndex,
+                  count: 3,
+                  effect: WormEffect(
+                      dotColor: ColorAsset.whitecolor,
+                      activeDotColor: ColorAsset.sliderColor,
+                      dotWidth: 45,
+                      dotHeight: 4,
+                      spacing: 0,
+                      radius: 4)),
+            ),
+          ),
         ],
       ),
     );
@@ -279,22 +296,23 @@ class _HomeScreenState extends State<HomeScreen> {
             // color: Colors.black,
             margin: const EdgeInsets.symmetric(horizontal: 8),
             child: ClipRRect(
+                borderRadius: BorderRadius.circular(30),
                 child: Image.asset(
                   card,
                   fit: BoxFit.cover,
                   height: _deviceHeight * 0.8,
                   width: _deviceWidth * 0.4,
-                ),
-                borderRadius: BorderRadius.circular(30)),
+                )),
           ),
           Center(
-              child: Text(
-            stringCard,
-            style: TextStyle(
-                color: ColorAsset.whitecolor,
-                fontSize: _deviceHeight * 0.019,
-                fontWeight: FontWeight.w700),
-          ))
+            child: Text(
+              stringCard,
+              style: TextStyle(
+                  color: ColorAsset.whitecolor,
+                  fontSize: _deviceHeight * 0.019,
+                  fontWeight: FontWeight.w700),
+            ),
+          ),
         ],
       );
 }
