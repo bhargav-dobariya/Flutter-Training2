@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorAsset {
+class AppColor {
   static Color sliderColor = const Color(0xffdab587);
   static Color greenColor = const Color(0xff156612);
   static Color cyanColor = const Color(0xff89dbe0);

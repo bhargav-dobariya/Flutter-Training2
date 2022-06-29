@@ -1,4 +1,6 @@
 class AppString {
+  static String txtResendOtp = "Resend Otp";
+  static String txtEnterYourOtpHere = "Enter Your Otp Here";
   static String txtWelcome = "Welcome!";
   static String connectivityTask = "Connectivity Animation Task";
   static String txtLocation = "location";
@@ -58,6 +60,7 @@ class AppString {
   static String txtScenes = "Scenes";
   static String txtSettings = "Settings";
   static String txtFamily = "Family";
+  static String txtSubmit = "Submit";
 
   static String txtSearch = "Search";
   static String txtLoginWithGoogle = "Login With Google";
