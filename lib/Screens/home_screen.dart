@@ -1,98 +1,94 @@
 import 'package:flutter/material.dart';
-import 'package:google_login_app/Bloc/employee_block.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_login_app/Bloc/covid_bloc.dart';
+import 'package:google_login_app/models/covid_model.dart';
 
-import '../Bloc/Employee.dart';
+import '../Bloc/covid_event.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class CovidPage extends StatefulWidget {
+
   @override
-  State<HomePage> createState() => _HomePageState();
+  
+  _CovidPageState createState() => _CovidPageState();
 }
 
-class _HomePageState extends State<HomePage> {  
-  final EmployeeBloc _employeeBloc = EmployeeBloc();
-
-  late double _deviceHeight;
-  late double _deviceWidth;
+class _CovidPageState extends State<CovidPage> {
+  final CovidBloc _newsBloc = CovidBloc();
 
   @override
   void initState() {
+    _newsBloc.add(GetCovidList());
     super.initState();
   }
 
   @override
-  void dispose() {
-    _employeeBloc.dispose();
-    super.dispose();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title:Text('COVID-19 List')),
+      body: _buildListCovid(),
+    );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    _deviceHeight = MediaQuery.of(context).size.height;
-
-    _deviceWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Employee App"),
-      ),
-      body: StreamBuilder<List<Employee>>(
-        stream: _employeeBloc.employeeListStream,
-        builder:
-            (BuildContext context, AsyncSnapshot<List<Employee>> snapshot) {
-          return ListView.builder(
-            itemCount: snapshot.data!.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                elevation: 5.0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "${snapshot.data![index].id}",
-                        style: const TextStyle(fontSize: 20),
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            snapshot.data![index].name,
-                            style: const TextStyle(fontSize: 18),
-                          ),
-                          Text(
-                            "₹ ${snapshot.data![index].salary}",
-                            style: const TextStyle(fontSize: 16),
-                          ),
-                        ],
-                      ),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.thumb_up_sharp),
-                      color: Colors.green,
-                      onPressed: () {
-                        _employeeBloc.employeeSalaryIncrement
-                            .add(snapshot.data![index]);
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.thumb_down_sharp),
-                      color: Colors.red,
-                      onPressed: () {
-                        _employeeBloc.employeeSalaryDecrement
-                            .add(snapshot.data![index]);
-                      },
-                    ),
-                  ],
+  Widget _buildListCovid() {
+    return Container(
+      margin: EdgeInsets.all(8.0),
+      child: BlocProvider(
+        create: (_) => _newsBloc,
+        child: BlocListener<CovidBloc, CovidState>(
+          listener: (context, state) {
+            if (state is CovidError) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(state.message!),
                 ),
               );
+            }
+          },
+          child: BlocBuilder<CovidBloc, CovidState>(
+            builder: (context, state) {
+              if (state is CovidInitial) {
+                return _buildLoading();
+              } else if (state is CovidLoading) {
+                return _buildLoading();
+              } else if (state is CovidLoaded) {
+                return _buildCard(context, state.covidModel);
+              } else if (state is CovidError) {
+                return Container();
+              } else {
+                return Container();
+              }
             },
-          );
-        },
+          ),
+        ),
       ),
     );
   }
+
+  Widget _buildCard(BuildContext context, CovidModel model){
+    return ListView.builder(
+      itemCount: model.countries!.length,
+      itemBuilder: (context, index) {
+        return Container(
+          margin: EdgeInsets.all(8.0),
+          child: Card(
+            child: Container(
+              margin: EdgeInsets.all(8.0),
+              child: Column(
+                children: <Widget>[
+                  Text("Country: ${model.countries![index].country}"),
+                  Text(
+                      "Total Confirmed: ${model.countries![index].totalConfirmed}"),
+                  Text("Total Deaths: ${model.countries![index].totalDeaths}"),
+                  Text(
+                      "Total Recovered: ${model.countries![index].totalRecovered}"),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildLoading() => const Center(child: CircularProgressIndicator());
 }
